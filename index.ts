@@ -6,9 +6,10 @@ const server = http.createServer(
       "content-type": "text/html",
     });
     console.log("");
-    console.log(req.rawHeaders[7]);
     const data = req.rawHeaders[7].split('"')[1];
-    const Postdata = req.rawHeaders[4].split("-")[0];
+    console.log("Data: ", data);
+    const Postdata = req.rawHeaders[6].split("-")[0];
+    console.log("Postdata: ", Postdata);
 
     if (data === undefined) {
       res.write(`You are using ${Postdata} to access me!`);
